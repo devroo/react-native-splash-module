@@ -7,21 +7,10 @@ import android.view.WindowManager;
 
 import java.lang.ref.WeakReference;
 
-/**
- * SplashScreen
- * 启动屏
- * from：http://www.devio.org
- * Author:CrazyCodeBoy
- * GitHub:https://github.com/crazycodeboy
- * Email:crazycodeboy@gmail.com
- */
 public class SplashScreen {
     private static Dialog mSplashDialog;
     private static WeakReference<Activity> mActivity;
 
-    /**
-     * 打开启动屏
-     */
     public static void show(final Activity activity, final int themeResId, final boolean fullScreen) {
         if (activity == null) return;
         mActivity = new WeakReference<Activity>(activity);
@@ -43,25 +32,16 @@ public class SplashScreen {
         });
     }
 
-    /**
-     * 打开启动屏
-     */
     public static void show(final Activity activity, final boolean fullScreen) {
         int resourceId = fullScreen ? R.style.SplashScreen_Fullscreen : R.style.SplashScreen_SplashTheme;
 
         show(activity, resourceId, fullScreen);
     }
 
-    /**
-     * 打开启动屏
-     */
     public static void show(final Activity activity) {
         show(activity, false);
     }
 
-    /**
-     * 关闭启动屏
-     */
     public static void hide(Activity activity) {
         if (activity == null) {
             if (mActivity == null) {
