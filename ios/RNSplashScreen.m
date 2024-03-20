@@ -1,12 +1,3 @@
-/**
- * SplashScreen
- * 启动屏
- * from：http://www.devio.org
- * Author:CrazyCodeBoy
- * GitHub:https://github.com/crazycodeboy
- * Email:crazycodeboy@gmail.com
- */
-
 #import "RNSplashScreen.h"
 #import <React/RCTBridge.h>
 
@@ -40,7 +31,7 @@ RCT_EXPORT_MODULE(SplashScreen)
         loadingView.frame = frame;
     }
     waiting = false;
-    
+
     [rootView addSubview:loadingView];
 }
 
@@ -58,7 +49,6 @@ RCT_EXPORT_MODULE(SplashScreen)
 
 + (void) jsLoadError:(NSNotification*)notification
 {
-    // If there was an error loading javascript, hide the splash screen so it can be shown.  Otherwise the splash screen will remain forever, which is a hassle to debug.
     [RNSplashScreen hide];
 }
 
